@@ -1,5 +1,12 @@
 package view;
 
+/*
+ * TODO:
+ * 		Create all menu buttons like createStartButton. 
+ */
+
+import java.util.ArrayList;
+import java.util.List;
 
 import javafx.scene.Scene;
 import javafx.scene.image.Image;
@@ -32,6 +39,11 @@ public class ViewManager {
 	private AnchorPane mainPane;
 	private Scene mainScene;
 	private Stage mainStage;
+	
+	private final int menuButtonStart_X = 100; 
+	private final int menuButtonStart_Y = 150; 
+	
+	List<GameButton> menuButtons;
 
 	
 	/*
@@ -43,12 +55,14 @@ public class ViewManager {
 	public ViewManager() {
 		// AnchorPane used to organize all UI contents.
 		// Allows the edges of child nodes to be anchored to an offset from the anchor pane edges and place elements using coordinates.
+		menuButtons = new ArrayList<>();
+		
 		mainPane = new AnchorPane();
 		mainScene = new Scene(mainPane,defaultMainWidth,defaultMainHeight);
 		mainStage = new Stage();
 		
 		mainStage.setScene(mainScene);
-		createButtons();
+		TestCreateButtons();
 		createBackground();
 	}
 	
@@ -64,7 +78,7 @@ public class ViewManager {
 	 * Creates Buttons and add them to the mainPane.
 	 * Add code do generate buttons.
 	 */
-	private void createButtons() {
+	private void TestCreateButtons() {
 		
 		//Example button.
 		GameButton button = new GameButton("click me");
@@ -73,6 +87,18 @@ public class ViewManager {
 		button.setLayoutX(200);
 		button.setLayoutY(200);
 		
+	}
+	
+	private void createStartButton() {
+		GameButton startButton = new GameButton("Start");
+		addMenuButtons(startButton);
+	}
+	
+	private void addMenuButtons(GameButton button) {
+		button.setLayoutX(menuButtonStart_X);
+		button.setLayoutY(menuButtonStart_Y);
+		menuButtons.add(button);
+		mainPane.getChildren().add(button);
 	}
 	
 	/**
