@@ -9,8 +9,8 @@ import javafx.scene.input.MouseButton;
 import javafx.scene.text.Font;
 
 /* 
- * TODO: Add background image urls.
- *		 Add font path
+ * TODO: Add background REAL image urls.
+ *		 Add REAL font path
  */
 
 /*
@@ -64,9 +64,7 @@ public class GameButton extends Button {
 	
 	/*
 	 * Sets the button style to released.
-	 * Sets layout coordinates.
-	 * 
-	 * 
+	 * Sets layout coordinates. 
 	 */
 	private void setButtonStyleReleased() {
 		setStyle(style_button_released);
